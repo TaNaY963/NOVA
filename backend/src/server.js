@@ -11,6 +11,8 @@ const authRoutes = require("./routes/authRoutes");
 
 const commentRoutes = require("./routes/commentRoutes");
 
+const dashboardRoutes = require("./routes/dashboardRoutes");
+
 dotenv.config();
 
 const app = express();
@@ -23,6 +25,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/projects", projectRoutes);
 app.use("/api/tasks", taskRoutes);
 app.use("/api/comments", commentRoutes);
+app.use("/api/dashboard", dashboardRoutes);
 
 app.get("/", (req, res) => {
   res.json({
